@@ -256,16 +256,4 @@
     </pluginRepository>
   </pluginRepositories>
 
-  <distributionManagement>
-    <snapshotRepository>
-      <id>deployment</id>
-      <name>Snapshot Deployment on dev</name>
-      <url>http://10.207.146.152:8081/repository/spring-petclinic-snapshot/</url>
-    </snapshotRepository>
-    <repository>
-      <id>deployment</id>
-      <name>Release Version Deployment</name>
-      <url>http://10.207.146.152:8081/repository/spring-petclinic-release/</url>
-    </repository>
-  </distributionManagement>
 </project>
