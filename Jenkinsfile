@@ -1,5 +1,5 @@
     node {
-      stage 'Checkout CodeBase'
+      stage 'Checkout'
       checkout([$class: 'GitSCM', 
       branches: [[name: '*/master']], 
       doGenerateSubmoduleConfigurations: false, 
@@ -37,7 +37,7 @@
         }
         
         node {
-            stage("Approval for Stage Deployment") {
+            stage("Approval for Stage") {
              input message: 'Proceed to deploy on Stage', submitter: 'test'
 				  }
         }
@@ -47,7 +47,7 @@
 				  }
         }
         node {
-          stage("Approval for Prod Deployment") {
+          stage("Approval for Prod") {
            input message: 'Proceed to deploy on Stage', submitter: 'test1'
 				  }
         }
