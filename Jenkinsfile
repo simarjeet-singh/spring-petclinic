@@ -17,13 +17,19 @@
          '''
         }
         node {
-          stage("Package Build") {
+          stage("Build") {
                 sh '''
                     mvn package -DskipTests=true
                    '''
           }
         }
-
+        node {
+          stage("Test Cases") {
+                sh '''
+                    mvn test
+                   '''
+          }
+        }
         node {
           stage("Publish to Nexus") {
             nexusArtifactUploader artifacts: [[artifactId: 'spring-petclinic-snapshot', classifier: '', file: '/home/tomcat/.jenkins/workspace/Build Pipeline/target/devops-petclinic-2.1.0.BUILD-SNAPSHOT.jar', type: 'jar']], credentialsId: 'Nexus-Creds', groupId: 'nexus', nexusUrl: '10.207.146.152:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'spring-petclinic-snapshot', version: '1.0'
