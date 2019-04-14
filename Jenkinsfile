@@ -10,9 +10,9 @@
 }
    node {
     stage 'SonarQube Anaylsis'
-    def scannerHome = tool 'sonar-scanner';
+    //def scannerHome = tool 'sonar-scanner';
       sh '''
-          /home/tomcat/.jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/sonar-scanner/bin/sonar-scanner -Dsonar.projectKey=spring-petclinic -Dsonar.projectName=spring-petclinic -Dsonar.projectVersion=1.0 -Dsonar.sources=. -Dsonar.java.binaries=./src
+       #   /home/tomcat/.jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/sonar-scanner/bin/sonar-scanner -Dsonar.projectKey=spring-petclinic -Dsonar.projectName=spring-petclinic -Dsonar.projectVersion=1.0 -Dsonar.sources=. -Dsonar.java.binaries=./src
             echo "Check reports on URL: http://10.207.146.151:9000/dashboard?id=spring-petclinic"
          '''
         }
