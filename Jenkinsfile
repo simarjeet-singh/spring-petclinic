@@ -44,7 +44,7 @@
         
         node {
             stage("Approval for Stage") {
-             timeout(time:5, unit:"DAYS")
+           //  timeout(time:5, unit:"DAYS")
              input message: 'Proceed to deploy on Stage', submitter: 'test'
 				  }
         }
@@ -55,7 +55,7 @@
         }
         node {
           stage("Approval for Prod") {
-           timeout(time:5, unit:"DAYS")
+          // timeout(time:5, unit:"DAYS")
            input message: 'Proceed to deploy on Stage', submitter: 'test1'
 				  }
         }
