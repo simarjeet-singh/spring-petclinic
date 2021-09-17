@@ -51,7 +51,7 @@ The following items should be installed in your system:
 
 1) On the command line
 ```
-git clone https://github.com/rsemburakkiannan/spring-petclinic.git
+git clone https://github.com/simarjeet-singh/spring-petclinic.git
 ```
 2) Inside Eclipse or STS
 ```
